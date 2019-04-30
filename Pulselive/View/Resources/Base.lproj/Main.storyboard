@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V60-qw-kQA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Content List-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pulselive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Content List" id="7Jz-zt-zxH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071.2" y="116.49175412293854"/>
+        </scene>
+        <!--Content Detail-->
+        <scene sceneID="TUF-qA-eju">
+            <objects>
+                <viewController id="Jij-Av-Z9v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="trf-FN-2bh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wPQ-U4-wpE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Content Detail" id="PEm-sM-gs4">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="8R8-ye-RM0"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ile-87-C7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1071" y="885"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eaN-cn-8ww">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V60-qw-kQA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PZd-oY-48y">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="R4W-NS-QKC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvh-q1-hzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="242" y="116"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cnf-Zf-4QG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sne-g9-M8u" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Gr-JU-s0Z">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jij-Av-Z9v" kind="relationship" relationship="rootViewController" id="XpM-Ne-HeP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSr-1w-TGV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="885"/>
+        </scene>
+        <!--Error View-->
+        <scene sceneID="4bd-vf-LWn">
+            <objects>
+                <viewController storyboardIdentifier="errorview" id="Jrn-ha-htF" customClass="ErrorView" customModule="Pulselive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qc8-nf-VDP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OQW-WS-2s4">
+                                <rect key="frame" x="62.5" y="166" width="250" height="355.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bku-dt-DDY">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7Sk-Fy-0UZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadcloud" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hq7-hd-aLx">
+                                        <rect key="frame" x="50" y="50" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="6RE-QN-PMk"/>
+                                            <constraint firstAttribute="height" constant="150" id="ry5-1K-XLX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="There seems to be a problem downloading stuff" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TO7-pj-pbz">
+                                        <rect key="frame" x="0.0" y="220" width="250" height="65.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ur-0A-2AT" customClass="RoundedBtn" customModule="Pulselive" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="305.5" width="250" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.42745098040000001" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hDf-dr-GJl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                        <state key="normal" title="OKAY">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okayBtnPrsd" destination="Jrn-ha-htF" eventType="touchUpInside" id="aIP-aM-K2b"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4Ur-0A-2AT" secondAttribute="trailing" id="6LU-Zu-mgH"/>
+                                    <constraint firstAttribute="trailing" secondItem="TO7-pj-pbz" secondAttribute="trailing" id="6jn-rD-yWB"/>
+                                    <constraint firstAttribute="trailing" secondItem="bku-dt-DDY" secondAttribute="trailing" id="CLB-pY-XHQ"/>
+                                    <constraint firstAttribute="width" constant="250" id="Yqc-hW-BaS"/>
+                                    <constraint firstItem="4Ur-0A-2AT" firstAttribute="leading" secondItem="OQW-WS-2s4" secondAttribute="leading" id="dgG-u2-5UE"/>
+                                    <constraint firstItem="bku-dt-DDY" firstAttribute="leading" secondItem="OQW-WS-2s4" secondAttribute="leading" id="eMi-5P-I2a"/>
+                                    <constraint firstItem="TO7-pj-pbz" firstAttribute="leading" secondItem="OQW-WS-2s4" secondAttribute="leading" id="nPK-6V-R6E"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OQW-WS-2s4" firstAttribute="centerX" secondItem="Qkz-dV-XPt" secondAttribute="centerX" id="8ht-KL-XKi"/>
+                            <constraint firstItem="OQW-WS-2s4" firstAttribute="centerY" secondItem="Qkz-dV-XPt" secondAttribute="centerY" id="Mam-zh-gE1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qkz-dV-XPt"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageTextView" destination="TO7-pj-pbz" id="zch-bi-qhh"/>
+                        <outlet property="titleLbl" destination="bku-dt-DDY" id="Qpy-1x-JLA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XtC-w8-01R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="-647"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sadcloud" width="16" height="16"/>
+    </resources>
+</document>
