@@ -29,12 +29,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailVC = self.storyboard!.instantiateViewController(withIdentifier: "detailviewcontroller") as? DetailViewController else { return }
+        let navController = UINavigationController(rootViewController: detailVC)
         
         let listItem = contentListItems[indexPath.row]
         
         contentDelegate = detailVC
         contentDelegate?.contentSelectedFromList(listItem: listItem)
         
-        self.present(detailVC, animated: true, completion: nil)
+        self.present(navController, animated: true, completion: nil)
     }
 }

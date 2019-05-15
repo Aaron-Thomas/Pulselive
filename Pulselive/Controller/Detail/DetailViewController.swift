@@ -10,22 +10,45 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var subtitleLbl: UILabel!
+    @IBOutlet weak var bodyTextView: UITextView!
     
-    var detailItem: ContentDetailItem?
+    var contentListItem: ContentListItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        guard let listItem = contentListItem else { return }
+        
+        showLoadingView()
+        getDetailView(itemId: listItem.id) { result in
+            self.hideLoadingView()
+            
+            switch result {
+            case .success(let contentDetail):
+                DispatchQueue.main.async {
+                    self.updateUI(contentDetail: contentDetail)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showErrorPopoverView(errorTitle: "Something went wrong", errorMessage: error.localizedDescription)
+                }
+            }
+        }
     }
     
     func updateUI(contentDetail: ContentDetail) {
+        guard let detailItem = contentDetail.item else { return }
         
+        titleLbl.text = detailItem.title
+        subtitleLbl.text = detailItem.subtitle
+        bodyTextView.text = detailItem.body
     }
     
-    func getDetailView(itemId: String, completion: @escaping (Result<ContentDetail, Error>) -> ()) {
+    func getDetailView(itemId: Int, completion: @escaping (Result<ContentDetail, Error>) -> ()) {
         
-        let listUrlString = "http://dynamic.pulselive.com/test/native/content\(itemId).json"
+        let listUrlString = "http://dynamic.pulselive.com/test/native/content/\(itemId).json"
         
         guard let url = URL(string: listUrlString) else { return }
         
@@ -44,18 +67,15 @@ class DetailViewController: UIViewController {
             }
         }.resume()
     }
+    
+    @IBAction func backBtnPrsd() {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension DetailViewController: ContentDelegate {
-   
+    
     func contentSelectedFromList(listItem: ContentListItem) {
-        getDetailView(itemId: listItem.id) { result in
-            switch result {
-            case .success(let contentDetail):
-                self.updateUI(contentDetail: contentDetail)
-            case .failure(let error):
-                self.showErrorPopoverView(errorTitle: "Something went wrong", errorMessage: error.localizedDescription)
-            }
-        }
+        contentListItem = listItem
     }
 }

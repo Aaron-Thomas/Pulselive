@@ -8,20 +8,20 @@
 
 import Foundation
 
-class ContentDetail: Codable {
+struct ContentDetail: Codable {
     
-    var item: ContentDetailItem
+    var item: ContentDetailItem?
     
-//    required init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        
-//        //item = try container.decodeIfPresent(ContentDetailItem.self, forKey: .item) ?? nil
-//    }
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        item = try container.decodeIfPresent(ContentDetailItem.self, forKey: .item) ?? nil
+    }
 }
 
-class ContentDetailItem: Codable {
+struct ContentDetailItem: Codable {
 
-    var id: String
+    var id: Int
     var title: String
     var subtitle: String
     var body: String
@@ -30,7 +30,7 @@ class ContentDetailItem: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
+        id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
         title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
         subtitle = try container.decodeIfPresent(String.self, forKey: .subtitle) ?? ""
         body = try container.decodeIfPresent(String.self, forKey: .body) ?? ""

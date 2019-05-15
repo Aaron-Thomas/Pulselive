@@ -25,14 +25,20 @@ class ListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        //DispatchQueue.global(qos: .background).async {}
-        
+        showLoadingView()
         getContentList { result in
+            self.hideLoadingView()
+            
             switch result {
             case .success(let contentList):
                 self.contentListItems = contentList.items
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             case .failure(let error):
-                self.showErrorPopoverView(errorTitle: "Something went wrong", errorMessage: error.localizedDescription)
+                DispatchQueue.main.async {
+                    self.showErrorPopoverView(errorTitle: "Something went wrong", errorMessage: error.localizedDescription)
+                }
             }
         }
     }

@@ -21,7 +21,7 @@ extension UIViewController {
         spinner.frame = CGRect(x:0, y: 0, width: 50, height: 50)
         spinner.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
         spinner.color = UIColor.white
-        spinner.tag = 1
+        spinner.tag = 2
         
         self.view.addSubview(backgroundView)
         self.view.addSubview(spinner)
@@ -34,22 +34,23 @@ extension UIViewController {
     }
     
     func hideLoadingView() {
-        if let backgroundView = self.view.viewWithTag(1) {
-            DispatchQueue.main.async {
-                backgroundView.removeFromSuperview()
+        DispatchQueue.main.async {
+            if let backgroundView = self.view.viewWithTag(1) {
+                DispatchQueue.main.async {
+                    backgroundView.removeFromSuperview()
+                }
             }
-        }
-        if let spinner = self.view.viewWithTag(2) {
-            DispatchQueue.main.async {
-                spinner.removeFromSuperview()
+            if let spinner = self.view.viewWithTag(2) {
+                DispatchQueue.main.async {
+                    spinner.removeFromSuperview()
+                }
             }
+            self.view.isUserInteractionEnabled = true
         }
-        self.view.isUserInteractionEnabled = true
     }
     
     
     func showErrorPopoverView(errorTitle: String, errorMessage: String) {
-
         guard let errorView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "errorview") as? ErrorView else { return }
 
         errorView.errorTitle = errorTitle

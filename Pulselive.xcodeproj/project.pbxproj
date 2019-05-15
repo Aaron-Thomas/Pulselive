@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		400FAB5C227988AA0028A596 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 400FAB5B227988AA0028A596 /* RoundedUIView.swift */; };
 		408A3B8C2278993100E07584 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408A3B8B2278993100E07584 /* AppDelegate.swift */; };
 		408A3B912278993100E07584 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 408A3B8F2278993100E07584 /* Main.storyboard */; };
 		408A3B932278993200E07584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 408A3B922278993200E07584 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		400FAB5B227988AA0028A596 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
 		408A3B882278993100E07584 /* Pulselive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pulselive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		408A3B8B2278993100E07584 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		408A3B902278993100E07584 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,7 +75,6 @@
 				408A3B9D22789A0600E07584 /* Model */,
 				408A3B9E22789A0D00E07584 /* View */,
 				408A3B9F22789A3700E07584 /* Controller */,
-				408A3B972278993200E07584 /* Info.plist */,
 			);
 			path = Pulselive;
 			sourceTree = "<group>";
@@ -99,8 +100,8 @@
 		408A3B9F22789A3700E07584 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				408A3BAA22789F2600E07584 /* MainView */,
-				408A3BAB22789F2C00E07584 /* DetailView */,
+				408A3BAA22789F2600E07584 /* List */,
+				408A3BAB22789F2C00E07584 /* Detail */,
 				40EEA76D2278D432000C60BA /* ErrorHandler */,
 				408A3B8B2278993100E07584 /* AppDelegate.swift */,
 			);
@@ -113,6 +114,7 @@
 				408A3B8F2278993100E07584 /* Main.storyboard */,
 				408A3B942278993200E07584 /* LaunchScreen.storyboard */,
 				408A3B922278993200E07584 /* Assets.xcassets */,
+				408A3B972278993200E07584 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -121,26 +123,27 @@
 			isa = PBXGroup;
 			children = (
 				408A3BA222789AE000E07584 /* RoundedBtn.swift */,
+				400FAB5B227988AA0028A596 /* RoundedUIView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		408A3BAA22789F2600E07584 /* MainView */ = {
+		408A3BAA22789F2600E07584 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				408A3BB62278CC7400E07584 /* ListViewController.swift */,
 				408A3BA422789B3C00E07584 /* ListViewController+Delegates.swift */,
 				408A3BB42278A11E00E07584 /* ContentListCell.swift */,
 			);
-			path = MainView;
+			path = List;
 			sourceTree = "<group>";
 		};
-		408A3BAB22789F2C00E07584 /* DetailView */ = {
+		408A3BAB22789F2C00E07584 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
 				408A3BAC22789F4800E07584 /* DetailViewController.swift */,
 			);
-			path = DetailView;
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		408A3BB02278A07B00E07584 /* Codables */ = {
@@ -244,6 +247,7 @@
 				408A3BA722789B9800E07584 /* ContentList.swift in Sources */,
 				408A3BA322789AE000E07584 /* RoundedBtn.swift in Sources */,
 				408A3B8C2278993100E07584 /* AppDelegate.swift in Sources */,
+				400FAB5C227988AA0028A596 /* RoundedUIView.swift in Sources */,
 				408A3BA522789B3C00E07584 /* ListViewController+Delegates.swift in Sources */,
 				408A3BAD22789F4800E07584 /* DetailViewController.swift in Sources */,
 				408A3BB72278CC7400E07584 /* ListViewController.swift in Sources */,
@@ -396,7 +400,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7D8A6696Q9;
-				INFOPLIST_FILE = Pulselive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Pulselive/View/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -414,7 +419,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7D8A6696Q9;
-				INFOPLIST_FILE = Pulselive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Pulselive/View/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
