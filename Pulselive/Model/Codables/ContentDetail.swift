@@ -12,7 +12,7 @@ struct ContentDetail: Codable {
     
     var item: ContentDetailItem?
     
-    required init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         item = try container.decodeIfPresent(ContentDetailItem.self, forKey: .item) ?? nil
@@ -27,7 +27,7 @@ struct ContentDetailItem: Codable {
     var body: String
     var date: String
     
-    required init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         id = try container.decodeIfPresent(Int.self, forKey: .id) ?? 0
